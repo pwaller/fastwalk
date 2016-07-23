@@ -24,7 +24,7 @@ import (
 // traverseLink is a sentinel error for fastWalk, similar to filepath.SkipDir.
 var traverseLink = errors.New("traverse symlink, assuming target is a directory")
 
-// fastWalk walks the file tree rooted at root, calling walkFn for
+// Walk walks the file tree rooted at root, calling walkFn for
 // each file or directory in the tree, including root.
 //
 // If fastWalk returns filepath.SkipDir, the directory is skipped.
@@ -38,7 +38,7 @@ var traverseLink = errors.New("traverse symlink, assuming target is a directory"
 //   * fastWalk can follow symlinks if walkFn returns the traverseLink
 //     sentinel error. It is the walkFn's responsibility to prevent
 //     fastWalk from going into symlink cycles.
-func fastWalk(root string, walkFn func(path string, typ os.FileMode) error) error {
+func Walk(root string, walkFn func(path string, typ os.FileMode) error) error {
 	// TODO(bradfitz): make numWorkers configurable? We used a
 	// minimum of 4 to give the kernel more info about multiple
 	// things we want, in hopes its I/O scheduling can take
