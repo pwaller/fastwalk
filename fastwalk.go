@@ -12,7 +12,7 @@
 //
 // See golang.org/issue/16399
 
-package imports
+package fastwalk
 
 import (
 	"errors"

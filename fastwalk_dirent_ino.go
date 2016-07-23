@@ -4,7 +4,7 @@
 
 // +build linux darwin
 
-package imports
+package fastwalk
 
 import "syscall"
 

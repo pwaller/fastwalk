@@ -4,7 +4,7 @@
 
 // +build linux darwin freebsd openbsd netbsd
 
-package imports
+package fastwalk
 
 import (
 	"bytes"
